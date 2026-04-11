@@ -1,0 +1,68 @@
+/* ── Global Reset & Design System ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange:        #F97316;
+  --orange-dark:   #C2410C;
+  --orange-deep:   #7C2D12;
+  --orange-light:  #FED7AA;
+  --orange-pale:   #FFF7ED;
+  --orange-glow:   rgba(249,115,22,0.15);
+
+  --green:         #16A34A;
+  --green-light:   #DCFCE7;
+  --red:           #DC2626;
+  --red-light:     #FEE2E2;
+  --yellow:        #D97706;
+  --yellow-light:  #FEF3C7;
+  --purple:        #7C3AED;
+  --purple-light:  #EDE9FE;
+
+  --gray-950:      #0a0a0a;
+  --gray-900:      #111827;
+  --gray-800:      #1F2937;
+  --gray-700:      #374151;
+  --gray-600:      #4B5563;
+  --gray-500:      #6B7280;
+  --gray-400:      #9CA3AF;
+  --gray-300:      #D1D5DB;
+  --gray-200:      #E5E7EB;
+  --gray-100:      #F3F4F6;
+  --gray-50:       #F9FAFB;
+  --white:         #FFFFFF;
+
+  --font-display:  'Fraunces', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+
+  --radius-sm:     8px;
+  --radius:        12px;
+  --radius-lg:     18px;
+  --radius-xl:     24px;
+  --radius-2xl:    32px;
+
+  --shadow-sm:     0 1px 3px rgba(0,0,0,.08);
+  --shadow:        0 4px 12px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.06);
+  --shadow-lg:     0 12px 24px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.06);
+  --shadow-xl:     0 24px 48px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.06);
+  --shadow-orange: 0 8px 32px rgba(249,115,22,.35);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--gray-50);
+  color: var(--gray-800);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--orange-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+
+/* ── Utility Classes ───────────────────────────────────────── */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }

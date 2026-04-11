@@ -1,0 +1,95 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/venv/
+backend/venv/Scripts/
+backend/venv/Lib/
+venv/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Dataset and large files (CRITICAL)
+backend/dataset/
+*.csv
+*.npy
+*.h5
+*.parquet
+*.pkl
+*.joblib
+*.pickle
+*.pth
+*.pt
+*.onnx
+*.pb
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.mov
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+*.bak
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Misc
+*.log
+*.tmp
+*.temp
+.cache/

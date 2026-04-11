@@ -1,0 +1,74 @@
+.page { min-height: 80vh; padding: clamp(40px,6vw,80px) clamp(16px,4vw,48px); background: var(--gray-50); }
+.inner { max-width: 1100px; margin: 0 auto; }
+
+.header { display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:32px; }
+.badge { display:inline-flex;align-items:center;gap:8px;background:var(--orange-pale);border:1px solid var(--orange-light);color:var(--orange-dark);font-size:13px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:12px; }
+.dot   { width:7px;height:7px;background:var(--orange);border-radius:50%;animation:pulse 2s infinite; }
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.4)}}
+.title { font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--gray-900);margin-bottom:8px; }
+.sub   { font-size:15px;color:var(--gray-500); }
+.clearBtn {
+  display:flex;align-items:center;gap:8px;
+  padding:10px 18px;background:white;color:var(--red);
+  border:1.5px solid var(--red-light);border-radius:var(--radius-sm);
+  font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all .2s;
+  flex-shrink:0;margin-top:4px;
+}
+.clearBtn:hover { background:var(--red-light); }
+
+.statsRow {
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px;
+}
+.statCard { background:white;border-radius:var(--radius-lg);padding:20px 16px;text-align:center;box-shadow:var(--shadow-sm); }
+.statNum  { font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1; }
+.statLabel{ font-size:12px;color:var(--gray-400);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:6px; }
+
+.grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px; }
+.card {
+  background:white;border-radius:var(--radius-lg);padding:20px;
+  display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-sm);
+  border:1px solid var(--gray-100);transition:all .2s;position:relative;
+}
+.card:hover { box-shadow:var(--shadow);transform:translateY(-2px); }
+.cardIcon {
+  width:52px;height:52px;border-radius:14px;border:1.5px solid;
+  display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;
+}
+.cardBody  { flex:1;min-width:0; }
+.cardName  { font-size:15px;font-weight:700;color:var(--gray-800);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+.cardDate  { font-size:12px;color:var(--gray-400);margin-bottom:8px; }
+.cardMeta  { display:flex;gap:6px;flex-wrap:wrap; }
+.confBadge { font-size:11px;font-weight:600;padding:3px 8px;border-radius:100px;background:var(--orange-pale);color:var(--orange-dark); }
+.sevBadge  { font-size:11px;font-weight:600;padding:3px 8px;border-radius:100px; }
+.deleteBtn {
+  position:absolute;top:12px;right:12px;
+  background:none;border:none;color:var(--gray-300);cursor:pointer;
+  padding:6px;border-radius:6px;transition:all .18s;display:flex;
+}
+.deleteBtn:hover { background:var(--red-light);color:var(--red); }
+
+.empty { text-align:center;padding:80px 20px;display:flex;flex-direction:column;align-items:center;gap:12px; }
+.emptyIcon { font-size:56px; }
+.empty h3  { font-size:22px;font-weight:700;color:var(--gray-700); }
+.empty p   { font-size:15px;color:var(--gray-400);max-width:320px; }
+.startBtn  {
+  margin-top:8px;padding:13px 28px;background:var(--orange);color:white;
+  border:none;border-radius:var(--radius);font-size:15px;font-weight:700;
+  cursor:pointer;font-family:var(--font-body);transition:all .2s;
+  box-shadow:var(--shadow-orange);
+}
+.startBtn:hover { background:var(--orange-dark); }
+
+.actions { margin-top:32px; }
+.newBtn {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;background:white;color:var(--gray-700);
+  border:1.5px solid var(--gray-200);border-radius:var(--radius);
+  font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all .2s;
+}
+.newBtn:hover { border-color:var(--orange);color:var(--orange); }
+
+@media(max-width:640px){
+  .statsRow { grid-template-columns:repeat(2,1fr); }
+  .header   { flex-direction:column; }
+}

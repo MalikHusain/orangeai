@@ -1,0 +1,28 @@
+# OrangeAI Backend — requirements.txt
+# Fixed for Python 3.13 + Windows (no Rust/compilation needed)
+
+# ── Web Framework ─────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.9
+
+# ── Database ──────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+aiosqlite==0.20.0
+alembic==1.13.3
+
+# ── Pydantic (pre-built wheels — NO Rust compilation) ─────────
+pydantic==2.10.6
+pydantic-settings==2.7.0
+
+# ── AI / ML ───────────────────────────────────────────────────
+tensorflow
+numpy
+Pillow
+scikit-learn
+matplotlib
+seaborn
+
+# ── Utilities ─────────────────────────────────────────────────
+python-dotenv==1.0.1
+gtts
