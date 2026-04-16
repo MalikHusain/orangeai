@@ -16,7 +16,7 @@ pydantic==2.10.6
 pydantic-settings==2.7.0
 
 # ── AI / ML ───────────────────────────────────────────────────
-tensorflow
+tensorflow-cpu==2.15.0
 numpy
 Pillow
 scikit-learn
