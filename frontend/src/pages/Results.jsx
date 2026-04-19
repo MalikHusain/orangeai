@@ -29,7 +29,7 @@ function TTSStatusBanner({ error, loading }) {
           {isOffline ? '❌ Backend not running' : isNotInstalled ? '❌ gTTS not installed' : '❌ TTS Error'}
         </div>
         <div style={{lineHeight:1.6}}>
-          {isOffline && <>Start your backend: <code style={{background:'#FEE2E2',padding:'1px 6px',borderRadius:4}}>cd backend → uvicorn main:app --reload --port 8000</code></>}
+          {isOffline && <>TTS service is temporarily unavailable. Please try again in a moment.</>}
           {isNotInstalled && <>Install gTTS: <code style={{background:'#FEE2E2',padding:'1px 6px',borderRadius:4}}>pip install gtts</code> then restart backend</>}
           {!isOffline && !isNotInstalled && <code style={{background:'#FEE2E2',padding:'1px 6px',borderRadius:4}}>{error}</code>}
         </div>
@@ -43,7 +43,7 @@ function TTSStatusBanner({ error, loading }) {
       display:'flex',alignItems:'center',gap:8}}>
       🎵 <strong>Hindi &amp; Marathi</strong> — powered by gTTS backend &nbsp;·&nbsp;
       <strong>English</strong> — browser voice &nbsp;·&nbsp;
-      Backend must be running on port 8000
+      Powered by gTTS cloud service
     </div>
   )
 }
@@ -161,7 +161,8 @@ export default function Results() {
     setTtsError(null)
 
     try {
-      const res = await fetch('http://localhost:8000/api/tts', {
+      const ttsUrl = (import.meta.env.VITE_API_URL || '/api') + '/tts'
+      const res = await fetch(ttsUrl, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ text, lang }),
