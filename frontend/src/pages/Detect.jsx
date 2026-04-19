@@ -7,7 +7,7 @@ import useDetection from '../hooks/useDetection'
 import styles from './Detect.module.css'
 
 export default function Detect() {
-  const { analyse, loading, progress, loadingMsg } = useDetection()
+  const { analyse, loading, progress, loadingMsg, backendOnline } = useDetection()
   const [file,    setFile]    = useState(null)
   const [preview, setPreview] = useState(null)
   const [camera,  setCamera]  = useState(false)
@@ -115,7 +115,10 @@ export default function Detect() {
           className={styles.header}
           initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }}
         >
-          <span className={styles.badge}><span className={styles.dot}/>Demo Mode</span>
+          {backendOnline
+            ? <span className={styles.badge}><span className={styles.dot} style={{background:'#22c55e'}}/> Live AI Mode</span>
+            : <span className={styles.badge}><span className={styles.dot}/> Demo Mode — backend waking up</span>
+          }
           <h1 className={styles.title}>Analyse Your Orange Plant</h1>
           <p className={styles.sub}>Upload a clear photo of the leaf, fruit, or affected area. The AI model analyses it in seconds.</p>
         </motion.div>

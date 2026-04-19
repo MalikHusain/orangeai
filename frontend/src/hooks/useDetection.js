@@ -20,6 +20,8 @@ export default function useDetection() {
     'Building multilingual report...',
   ]
 
+  const [backendOnline, setBackendOnline] = useState(true)
+
   const analyse = useCallback(async (file, settings) => {
     setLoading(true)
     setProgress(0)
@@ -43,8 +45,10 @@ export default function useDetection() {
       try {
         const { data } = await detectDisease(formData, setProgress)
         result = data.result
+        setBackendOnline(true)
       } catch {
         // Demo fallback when backend is not running
+        setBackendOnline(false)
         await new Promise(r => setTimeout(r, 2500))
         result = generateDemoResult()
       }
@@ -83,7 +87,7 @@ export default function useDetection() {
     }
   }, [navigate])
 
-  return { analyse, loading, progress, loadingMsg }
+  return { analyse, loading, progress, loadingMsg, backendOnline }
 }
 
 function generateDemoResult() {
